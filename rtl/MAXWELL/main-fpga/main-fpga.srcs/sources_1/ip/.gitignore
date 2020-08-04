@@ -1,0 +1,13 @@
+*.veo 
+*.out
+doc
+*.xml
+*.tcl
+*.prj
+*.in
+*.dcp
+*.v
+*.vhdl
+*.xdc
+*.vho
+hdl

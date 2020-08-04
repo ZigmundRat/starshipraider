@@ -23,6 +23,30 @@ X Pin_1 1 -200 0 150 R 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
+# Connector_Conn_01x02
+#
+DEF Connector_Conn_01x02 J 0 40 Y N 1 F N
+F0 "J" 0 100 50 H V C CNN
+F1 "Connector_Conn_01x02" 0 -200 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_??x*mm*
+ Connector*:*1x??x*mm*
+ Pin?Header?Straight?1X*
+ Pin?Header?Angled?1X*
+ Socket?Strip?Straight?1X*
+ Socket?Strip?Angled?1X*
+$ENDFPLIST
+DRAW
+S -50 -95 0 -105 1 1 6 N
+S -50 5 0 -5 1 1 6 N
+S -50 50 50 -150 1 1 10 f
+X Pin_1 1 -200 0 150 R 50 50 1 1 P
+X Pin_2 2 -200 -100 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
 # Connector_Conn_01x05
 #
 DEF Connector_Conn_01x05 J 0 40 Y N 1 F N
@@ -264,6 +288,47 @@ X ~ 2 0 -150 130 U 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
+# device_D_Zener
+#
+DEF device_D_Zener D 0 40 N N 1 F N
+F0 "D" 0 100 50 H V C CNN
+F1 "device_D_Zener" 0 -100 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ TO-???*
+ *SingleDiode
+ *_Diode_*
+ *SingleDiode*
+ D_*
+$ENDFPLIST
+DRAW
+P 2 0 1 0 50 0 -50 0 N
+P 3 0 1 8 -50 -50 -50 50 -30 50 N
+P 4 0 1 8 50 -50 50 50 -50 0 50 -50 N
+X K 1 -150 0 100 R 50 50 1 1 P
+X A 2 150 0 100 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# device_Fuse
+#
+DEF device_Fuse F 0 0 N Y 1 F N
+F0 "F" 80 0 50 V V C CNN
+F1 "device_Fuse" -75 0 50 V V C CNN
+F2 "" -70 0 50 V I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ *Fuse*
+$ENDFPLIST
+DRAW
+S -30 -100 30 100 0 1 10 N
+P 2 0 1 0 0 100 0 -100 N
+X ~ 1 0 150 50 D 50 50 1 1 P
+X ~ 2 0 -150 50 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
 # device_R
 #
 DEF device_R R 0 0 N Y 1 F N
@@ -279,6 +344,20 @@ DRAW
 S -40 -100 40 100 0 1 10 N
 X ~ 1 0 150 50 D 50 50 1 1 P
 X ~ 2 0 -150 50 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# passive-azonenberg_FERRITE_SMALL
+#
+DEF passive-azonenberg_FERRITE_SMALL FB 0 40 Y Y 1 F N
+F0 "FB" 0 100 60 H V C CNN
+F1 "passive-azonenberg_FERRITE_SMALL" 0 -100 60 H V C CNN
+F2 "" 0 0 60 H V C CNN
+F3 "" 0 0 60 H V C CNN
+DRAW
+S -150 50 150 -50 0 1 0 N
+X ~ 1 300 0 150 L 50 50 1 1 w
+X ~ 2 -300 0 150 R 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
@@ -398,6 +477,26 @@ X VSS 9 -250 750 250 R 50 50 1 1 W
 ENDDRAW
 ENDDEF
 #
+# special-azonenberg_AT30TS74_UDFN
+#
+DEF special-azonenberg_AT30TS74_UDFN U 0 40 Y Y 1 F N
+F0 "U" 0 -50 50 H V C CNN
+F1 "special-azonenberg_AT30TS74_UDFN" 0 -150 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+S 0 500 600 0 0 1 0 f
+X SDA 1 -100 150 100 R 50 50 1 1 B
+X SCL 2 -100 50 100 R 50 50 1 1 B
+X ALERT 3 700 50 100 L 50 50 1 1 O
+X GND 4 -100 350 100 R 50 50 1 1 W
+X A2 5 700 250 100 L 50 50 1 1 I
+X A1 6 700 350 100 L 50 50 1 1 I
+X A0 7 700 450 100 L 50 50 1 1 I
+X VCC 8 -100 450 100 R 50 50 1 1 W
+ENDDRAW
+ENDDEF
+#
 # special-azonenberg_CONN_SFF8087
 #
 DEF special-azonenberg_CONN_SFF8087 J 0 40 Y Y 2 L N
@@ -406,7 +505,7 @@ F1 "special-azonenberg_CONN_SFF8087" 250 -150 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW
-S 0 2150 450 0 1 1 0 f
+S 0 2150 600 0 1 1 0 f
 S 0 2300 400 0 2 1 0 f
 X GND A1 -100 1050 100 R 50 50 1 1 W
 X SB4 A10 -100 1650 100 R 50 50 1 1 P
@@ -428,6 +527,7 @@ X GND B4 -100 950 100 R 50 50 1 1 W
 X GND B7 -100 750 100 R 50 50 1 1 W
 X SB0 B8 -100 2050 100 R 50 50 1 1 P
 X SB1 B9 -100 1950 100 R 50 50 1 1 P
+X GND SHLD 800 50 200 L 50 50 1 1 W
 X RX2_P A13 -100 450 100 R 50 50 2 1 P
 X RX2_N A14 -100 350 100 R 50 50 2 1 P
 X RX3_P A16 -100 150 100 R 50 50 2 1 P
