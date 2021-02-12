@@ -1,0 +1,6 @@
+*-cache.lib
+output/*.gbr
+output/*.drl
+output/*.zip
+*.bak
+*-bak
